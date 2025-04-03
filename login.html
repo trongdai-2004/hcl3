@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    
+    <title>Đăng nhập/Đăng ký</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="acset/css/login.css?v=1">
+</head>
+<body>
+   
+    <div id="login-fo d-flex justify-content-center align-items-center vh-100" style="padding-top: 50px; padding-bottom: 50px;">
+        <div class="container cont" id="container" style="width: 780px; height: 480px;">
+            <div class="form-container sign-up">
+                <form action="" method="post">
+                    <h1>Đăng ký với</h1>
+                    <div class="social-icons">
+                        <a style="color: red;"href="#" class="icon"><i class="fa fa-google-plus"></i></a>
+                        <a style="color: blue;" href="#" class="icon"><i class="fa fa-facebook-f"></i></a>
+                        <a style="color: black;"href="#" class="icon"><i class="fa fa-github"></i></a>
+                        <a style="color: red;"href="#" class="icon"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <span>Hoặc đăng ký email</span>
+                    <input type="text" name="username" placeholder="Tên đăng nhập" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Mật khẩu" required>
+                    <input type="password" name="repass" placeholder="Nhập lại mật khẩu" required>
+                    <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+                    <button id="dangnhapld" type="submit" name="submit">Đăng Ký</button>
+                </form>
+            </div>
+            <!-- Đăng nhập -->
+            <div class="form-container sign-in">
+                <form action="" method="" autocomplete="off">   
+                   <h1>Đăng Nhập</h1>
+                    <div class="social-icons" style="color: blue;">
+                        <a style="color: red;"href="#" class="icon"><i class="fa fa-google-plus"></i></a>
+                        <a style="color: blue;"href="#" class="icon"><i class="fa fa-facebook-f"></i></a>
+                        <a style="color: black;"href="#" class="icon"><i class="fa fa-github"></i></a>
+<a style="color: red;"href="#" class="icon"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <span>Hoặc đăng nhập</span>
+                    <input type="text" name="name" placeholder="Tên đăng nhập" required>
+                    <input type="password" name="userpassword" placeholder="Mật khẩu" required>
+                    <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+                    <a style="color: red;"href="#">Quên Mật Khẩu?</a>
+                    <a href=""><button id="dangnhapld" >Đăng nhập</button></a>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Chào mừng đến shop ăn vặt CTUT</h1>
+                        <p>Nếu có tài khoản đăng nhập tại đây</p>
+                        <a href="index.html"><button class="hidden" id="login">Đăng nhập</button></a>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Chào mừng bạn</h1>
+                        <p>Hãy đăng ký tài khoản để được mua hàng nếu chưa1
+                             có tài khoản</p>
+
+                            <a href="#">
+                                <button class="hidden" id="register">Đăng ký</button>
+
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const container = document.getElementById("container");
+        const rebtn = document.getElementById("register");
+        const logbtn = document.getElementById("login");
+        
+        rebtn.addEventListener('click', () => {
+            container.classList.add("active");
+     
+        });
+        logbtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+        document.getElementById('dangnhapld').onclick = function(){
+            window.location.assign('index.html')
+        }
+
+
+    </script>
+</body>
+</html>

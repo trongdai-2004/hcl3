@@ -1,0 +1,335 @@
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="acset/css/test.css">
+  <title>trang admin</title>
+</head>
+
+<body>
+  <style>i{
+          margin-right: 10px;
+        }</style>
+
+  <div class="section-one">
+    <div class="row">
+      <div class="col-4">
+        <div class="logo">
+          <img src="acset/image/logo.jpg" alt="">
+          <div class="title_logo">
+            <h4> SNACKS(YDK)</h4>
+
+            <style>
+              .title_logo {
+                  background: radial-gradient(circle, yellow, orange, red);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+              }
+          </style>
+          </div>
+        </div>
+        <div class="mauxanh">
+          
+        </div>
+        <div class="home">
+
+          <a href="index(admin).html"> <button class="title">
+              <i class="fa-solid fa-house"></i>TRANG CHỦ
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <style>
+          /* Định dạng chung */
+          body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+
+          }
+
+          h1 {
+            text-align: center;
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 20px;
+          }
+
+          /* Định dạng bảng */
+          table {
+            width: 115%;
+            max-width: 1200px;
+            margin-left: -150px;
+            border-collapse: separate;
+            /* Giữ khoảng cách giữa các cột */
+            border-spacing: 0 10px;
+            /* Tạo khoảng cách giữa các dòng */
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+          }
+          table tr:nth-child(even) {
+              background-color: #f2f2f2 !important;
+              /* Màu xám nhạt */
+            }
+
+          table tr:nth-child(odd) {
+              background-color: #ffffff !important;
+              /* Màu trắng */
+            }
+
+          table,
+          th,
+          td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+          }
+
+          /* Định dạng tiêu đề bảng */
+          th {
+            background-color: #F2F2F2 !important;
+            color: white;
+            
+            
+            font-size: 20px;
+            border: none !important;
+            
+            
+          }
+
+          /* Định dạng ô dữ liệu */
+          td {
+            background-color: #ffffffff;
+            color: #555;
+            font-size: 14px;
+            font-weight: normal;
+            transition: background-color 0.3s ease;
+          }
+
+          /* Thêm hiệu ứng hover cho các dòng */
+          tr:hover td {
+            background-color: #f1f1f1;
+          }
+
+          /* Tạo khoảng cách giữa các bảng */
+          table+table {
+            margin-top: 50px;
+          }
+
+          /* Định dạng không có tài khoản */
+          p {
+            text-align: center;
+            color: #999;
+            font-size: 16px;
+          }
+
+          th {
+
+            font-weight: bold;
+            background-color:#7D7D7D;
+            color: black;
+            border: 1px solid black !important;
+
+          }
+
+          th,td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            /* Căn giữa theo chiều ngang */
+            vertical-align: middle;
+            /* Căn giữa theo chiều dọc */
+          }
+
+          /* Thêm responsive cho thiết bị di động */
+          @media (max-width: 768px) {
+            table {
+              width: 100%;
+            }
+
+            th,
+            td {
+              padding: 8px;
+              font-size: 14px;
+            }
+          }
+        </style>
+        </head>
+
+        <body>
+          <style>
+            .title{
+              font-size: 35px;
+            }
+          </style>
+
+
+          <h1 class="title">DANH SÁCH TÀI KHOẢN NGƯỜI DÙNG </h1>
+
+
+          <form method="GET" action="infor_User.php" class="form-1">
+    <input type="text" name="keyword" class="form-control" placeholder="Nhập tài khoản cần tìm...">
+    <button type="submit" class="btn btn-primary bnt-form-1"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+
+    
+    <style>
+      .bnt-form-1{
+        width: 80px;
+        height: auto;
+        margin-left: 3px;
+
+      }
+      .form-1{
+        position: relative;
+        top: -10px;
+        left: 640px;
+        width: 320px;
+        display: flex;
+        border-radius: 10px;
+        
+        
+      }
+      </style>
+
+          
+            <table>
+              <tr>
+                <th>ID</th>
+                <th>Tên tài khoản</th>
+                <th>Email</th>
+                <th>Vai trò</th>
+              </tr>
+            
+                <tr>
+                  <td>1</td>
+                  <td>Minh</td>
+                  <td>nguyenvana@gmail.com</td>
+                  <td>user</td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>Khang</td>
+                  <td>PHAMa@gmail.com</td>
+                  <td>user</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Vượng</td>
+                  <td>vanggiau@gmail.com</td>
+                  <td>user</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Hùng</td>
+                  <td>phadat@gmail.com</td>
+                  <td>user</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Khuyên</td>
+                  <td>khuyen@gmail.com</td>
+                  <td>user</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Huy</td>
+                  <td>huy@gmail.com</td>
+                  <td>user</td>
+                </tr>
+             
+             
+             
+             
+             
+             
+            </table>
+         
+
+
+        </body>
+
+</html>
+
+
+
+</div>
+
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <a href="product(admin).html">
+      <button class="product">
+        <i class="fa-brands fa-product-hunt"></i> SẢN PHẨM 
+      </button>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <a href="order(admin).html">
+      <button class="news">
+        <i class="fa-regular fa-calendar-plus"></i> ĐƠN HÀNG 
+      </button>
+    </a>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <a href="user(admin).html"><button class="order-1">
+        <i class="fa-solid fa-cart-shopping"></i> NGƯỜI DÙNG 
+      </button>
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+   
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="header">
+
+    </div>
+
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+  crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

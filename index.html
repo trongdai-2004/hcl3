@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Food Ordering UI</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <!-- File CSS tuỳ chỉnh -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="acset/css/index.css" />
+    <link rel="stylesheet" href="acset/css/message.css">
+</head>
+
+<body>
+    <div class="container-fluid m-0 p-0" style="overflow-x: hidden;">
+        <div class="row">
+            <!-- Sidebar trái -->
+            <div id="left-bar" class="d-none d-lg-flex bg-white col-md-2 min-vh-100 d-flex flex-column p-4">
+                <!-- Logo -->
+                <div class="mb-4">
+                    <img src="acset/image/logo.jpg" alt="Logo" class="img-fluid" />
+                </div>
+
+                <!-- Menu -->
+                <nav class="nav flex-column mb-4 cha">
+                    <a class="nav-link py-3" href="#">
+                        <i class="bi bi-house me-2"></i> Trang chủ
+                    </a>
+                    <a class="nav-link py-3" href="like_food.html">
+                        <i class="bi bi-heart me-2"></i> Yêu thích
+                    </a>
+                    <a class="nav-link py-3" href="add_cart.html">
+                        <i class="bi bi-cart me-2"></i> Giỏ hàng
+                    </a>
+
+                    <a class="nav-link py-3" href="setting.html">
+                        <i class="bi bi-gear me-2"></i> cài đặt
+                    </a>
+
+                    <a id="messagechat" class="nav-link py-3 " href="#">
+                        <i class="bi bi-chat me-2"></i> Nhắn tin
+                    </a>
+
+                </nav>
+
+
+
+
+
+
+
+                <!-- Box nâng cấp tài khoản -->
+                <!-- <div class="mt-auto p-3 text-center upgrade-box rounded">
+                    <h6>Upgrade Your Account</h6>
+                    <p class="mb-2">Get Free Shipping</p>
+                    <button class="btn btn-sm btn-warning">Upgrade</button>
+                </div> -->
+            </div>
+            <div class="col-2"></div>
+            <!-- Nội dung chính -->
+            <div id="main-content" class="col-md-7 p-3 ">
+                <!-- Thanh tiêu đề và tìm kiếm -->
+                <div style="background-color: #f3f0f0;"
+                    class="py-2 py-lg-3 position-sticky sticky-top d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h4 mb-0 fw-bold fs-2 logo">SNACKS(YDK)</h1>
+
+                    <style>
+                        .logo {
+                            background: radial-gradient(circle, yellow, orange, red);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+                    </style>
+                    <!-- gắn thêm  -->
+
+                    <div id="search-home-wrapper" class="input-group " style="max-width: 400px; border-radius: 16px;">
+                        <input id="search-home" type="text" class="form-control p-2 "
+                            placeholder="   Hôm nay bạn muốn ăn gì ?" />
+                        <div id="search-img" class="">
+                            <i class="fa fa-plus" aria-hidden="true"
+                                onclick="document.getElementById('fileInput').click()"></i>
+                            <input class="d-none" type="file" id="fileInput">
+                        </div>
+                        <button class="btn btn-warning" type="button">
+                            <i class="bi bi-search text-white"></i>
+                        </button>
+                        <div id="box-result" class="rounded-1">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex align-items-center px-0">
+                                    <img class="mr-3" src="acset/image/cake.png" style="width: 4rem;">
+                                    <div class="flex-grow-1">
+                                        <span style="font-weight: bold;" class="font-weight-bold d-block">Bánh
+                                            kem</span>
+                                        <span class="text-muted d-block text-truncate" style="max-width: 250px;">
+                                            120/Nguyen Van Cu, An Hoa, Can Tho
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center px-0">
+                                    <img class="mr-3" src="acset/image/cake.png" style="width: 4rem;">
+                                    <div class="flex-grow-1">
+                                        <span style="font-weight: bold;"
+                                            class="font-weight-bold d-block">Hamburger</span>
+                                        <span class="text-muted d-block text-truncate" style="max-width: 250px;">
+                                            320/Nguyen Van Linh, An Hoa, Can Tho
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center px-0">
+                                    <img class="mr-3" src="acset/image/cake.png" style="width: 4rem;">
+                                    <div class="flex-grow-1">
+                                        <span style="font-weight: bold;" class="font-weight-bold d-block">Pizza</span>
+                                        <span class="text-muted d-block text-truncate" style="max-width: 250px;">
+                                            220/3/2, An Hoa, Can Tho
+                                        </span>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <style>
+                        #search-home-wrapper #box-result {
+                            content: '';
+                            display: none;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                            background-color: white;
+                            position: absolute;
+                            top: 120%;
+                            right: 10%;
+                            left: 0;
+                            height: fit-content;
+                            max-height: 195px;
+                            overflow: hidden;
+                        }
+
+                        #search-home-wrapper:focus-within #box-result {
+                            display: block;
+                        }
+
+                        #search-home {
+                            position: relative;
+                        }
+
+                        #search-img {
+                            position: absolute;
+                            right: 14%;
+                            top: 6px;
+                            bottom: 0;
+                        }
+                    </style>
+
+
+                    <script>
+                        let search_home = document.getElementById('search-home');
+
+                        const content = [{
+                            id: 0,
+                            img: 'acset/image/banhngot5.jpg',
+                            nameFood: 'Hamburger',
+                            address: '660/Nguyen Van Cu, An Hoa, Can Tho'
+                        },
+                        {
+                            id: 0,
+                            img: 'acset/image/banhngot2.jpg',
+                            nameFood: 'Bánh Kem',
+                            address: '120/Nguyen Van Cu, An Phu, Can Tho'
+                        },
+                        {
+                            id: 0,
+                            img: 'acset/image/banhngot3.jpg',
+                            nameFood: 'Pizza',
+                            address: '220/3/2, An Hoa, Can Tho'
+                        }
+                        ]
+
+
+
+                        let list_group_result = document.querySelector('#box-result .list-group')
+
+
+
+                        search_home.addEventListener('input', function () {
+                            let prompt = this.value
+                            if (prompt !== '') {
+                                content.forEach(result => {
+                                    if (isMatch(result.nameFood, prompt)) {
+                                        renderResultsSearch(result.nameFood, '', result.address)
+
+                                    } else if (isMatch(result.address, prompt)) {
+                                        renderResultsSearch(result.address, '', result.address)
+                                        console.log('run', this.value);
+
+                                    }
+                                    // else{
+                                    //   list_group_result.innerHTML = 
+                                    //     `                
+                                    //       <li class="list-group-item">
+                                    //         <h6 class="text-center text-white w-100 bg-secondary py-2 mt-2">Không tìm thấy</h6>
+
+                                    //       </li>
+                                    //     `
+
+                                    // }
+
+                                });
+
+                            }
+                        })
+
+                        document.querySelector('#fileInput').addEventListener('change', function (e) {
+                            let filePath = e.target.value;
+                            let fileName = filePath.split("\\").pop();
+                            search_home.value = fileName
+                            document.getElementById('box-result').style.display = 'block'
+                            renderResultsSearch('Cake', '', '200,An Khanh,Ninh Kieu Can tho')
+
+                        })
+
+
+
+
+                        function renderResultsSearch(name, img = '', address) {
+                            list_group_result.insertAdjacentHTML('afterbegin',
+                                `                
+      <li class="list-group-item d-flex align-items-center px-0">
+        <img class="mr-3" src="acset/image/banhngot5.jpg" style="width: 4rem;">
+        <div class="flex-grow-1">
+          <span style="font-weight: bold;"   class="font-weight-bold d-block">${name}</span>
+          <span class="text-muted d-block text-truncate" style="max-width: 250px;">
+            ${address}
+          </span>
+        </div>
+      </li>
+      `
+                            )
+                        }
+
+                        function isMatch(text, param) {
+                            const regex = new RegExp(param, "i"); // "i" để không phân biệt hoa thường
+                            return regex.test(text);
+                        }
+                    </script>
+                    <!--  end gắn thêm  -->
+
+
+
+
+                </div>
+
+                <div class="banner">
+                    <iframe src="./carousel.html" width="100%" height="100%" frameborder="0"></iframe>
+
+                </div>
+
+
+
+                <!-- Danh mục -->
+                <div class="mt-2">
+                    <h5 class="mb-3 fw-bold">Danh mục </h5>
+                    <div class="d-flex flex-wrap justify-content-lg-between justify-content-evenly">
+                        <div class="category  d-flex d-flex flex-column mb-2 mb-lg-0 bg-white ">
+                            <div class="category__img">
+                                <img src="acset/image/douong2.png" alt="">
+                            </div>
+                            <div class="category__name mx-auto pb-2">NƯỚC ÉP</div>
+                        </div>
+                        <div class="category  d-flex d-flex flex-column mb-2 mb-lg-0 bg-white ">
+                            <div class="category__img">
+                                <img src="acset/image/danhmuc6.jpg" alt="">
+                            </div>
+                            <div class="category__name mx-auto pb-2">ĐỒ CHIÊN</div>
+                        </div>
+                        <div class="category  d-flex d-flex flex-column mb-2 mb-lg-0 bg-white ">
+                            <div class="category__img">
+                                <img src="acset/image/daheochien.jpg" alt="">
+                            </div>
+                            <div class="category__name mx-auto pb-2">ĐỒ KHÔ</div>
+                        </div>
+                        <div class="category  d-flex d-flex flex-column mb-2 mb-lg-0 bg-white ">
+                            <div class="category__img">
+                                <img src="acset/image/danhmuc5.jpg" alt="">
+
+                            </div>
+                            <div class="category__name mx-auto pb-2">ĐỒ NƯỚNG </div>
+                        </div>
+                        <div class="category  d-flex d-flex flex-column mb-2 mb-lg-0 bg-white ">
+                            <div class="category__img">
+                                <img src="acset/image/danhmuc3.jpg" alt="">
+                            </div>
+                            <div class="category__name mx-auto pb-2">ĐỒ ĂN VẬT</div>
+                        </div>
+                        <div class="category  d-flex d-flex flex-column mb-2 mb-lg-0 bg-white ">
+                            <div class="category__img">
+                                <img src="acset/image/danhmuc4.1.jpg" alt="">
+                            </div>
+                            <div class="category__name mx-auto pb-2">ĐỒ UỐNG</div>
+                        </div>
+
+
+                        <div class="category  d-flex d-flex flex-column mb-2 mb-lg-0 bg-white ">
+                            <div class="category__img">
+                                <img src="acset/image/hat.jpg" alt="">
+                            </div>
+                            <div class="category__name mx-auto pb-2">HẠT</div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <!-- Món ăn phổ biến -->
+                <div>
+                    <h5 class="my-3 fw-bold">Món ăn phổ biến </h5>
+                    <div class="row g-2 g-lg-3">
+                        <!-- Card 1 -->
+                        <style>
+                            .product a {
+                                color: #212529;
+                                text-decoration: none;
+
+                            }
+                        </style>
+
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="product">
+                                <a href="product_details.html">
+                                    <div class="card position-relative border-0">
+                                        <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá
+                                            10%</span>
+                                        <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                            <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                        </span>
+                                        <img src="acset/image/banhtrangtron.jpg" class="card-img-top"
+                                            alt="Beef Burger" />
+                                        <div class="card-body d-flex ">
+                                            <div class="">
+                                                <span class="card-rate">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                </span>
+                                                <h6 class="card-title fw-bold">Bánh tráng trộn</h6>
+                                                <p class="card-text f">20.000 VND</p>
+                                            </div>
+                                            <div class="ms-auto"
+                                                style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="product">
+                                <a href="product_details.html">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 5%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/bapxao.jpg" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Bắp xào</h6>
+                                        <p class="card-text f">15.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+                        </div>
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 25%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/changaxatat.jpg" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Chân gà sả tắc</h6>
+                                        <p class="card-text   ">50.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 9%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/banhchuoichien.jpg" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Bánh chuối chiên</h6>
+                                        <p class="card-text f">5.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Có thể thêm nhiều card khác tùy ý -->
+                    </div>
+
+                    <div class="row g-2 g-lg-3 mt-1">
+                        <!-- Card 1 -->
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 12%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/cavienchien.jpg" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Cá viên chiên</h6>
+                                        <p class="card-text f">20.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 15%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/daheochien.jpg" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Da heo chiên</h6>
+                                        <p class="card-text f">50.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 15%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/rongbienchien.jpg" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Rông biển chiên</h6>
+                                        <p class="card-text f">35.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 19%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/banhtrangnuong.jpg" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Bánh tráng nướng </h6>
+                                        <p class="card-text f">15.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 5%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/douong1.png" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Trà mãn cầu </h6>
+                                        <p class="card-text f">25.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 30%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/douong2.png" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Trà măng cụt </h6>
+                                        <p class="card-text f">50.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 29%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/douong3.png" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Trà mận đỏ </h6>
+                                        <p class="card-text f">30.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-md-3 col-6 card-food">
+                            <div class="card position-relative border-0">
+                                <span class="position-absolute top-0 start-0 badge bg-danger mt-2">Giảm giá 10%</span>
+                                <span class="me-3 position-absolute top-0 end-0 mt-1">
+                                    <i class="fa fa-heart text-danger fs-5" aria-hidden="true"></i>
+                                </span>
+                                <img src="acset/image/douong4png.png" class="card-img-top" alt="Beef Burger" />
+                                <div class="card-body d-flex ">
+                                    <div class="">
+                                        <span class="card-rate">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <h6 class="card-title fw-bold">Trà xoài chanh </h6>
+                                        <p class="card-text f">40.000 VND</p>
+                                    </div>
+                                    <div class="ms-auto"
+                                        style="border-radius: 8px; background-image: url('acset/image/add-icon.png');width: 40px;height:40px;background-size: cover;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                        <!-- Có thể thêm nhiều card khác tùy ý -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="chatbox-wrapper-frame" class="chattt col-md-7 p-3">
+                <iframe id="ifif" src="./message.html" width="80%" height="520" frameborder="0"></iframe>
+
+            </div>
+            <script>
+                document.getElementById('chatbox-wrapper-frame').style.display = 'none'
+                let messageChat = document.getElementById('messagechat')
+                messageChat.addEventListener('click', function () {
+
+
+                    var chatbox = document.getElementById('chatbox-wrapper-frame');
+                    if (chatbox.style.display === 'none' || chatbox.style.display === '') {
+                        chatbox.style.display = 'block'; // Hiển thị nếu đang ẩn
+                    } else {
+                        chatbox.style.display = 'none'; // Ẩn nếu đang hiển thị
+                    }
+                    // console.log(changeIframeContent());
+                    changeIframeContent()[0].onclick = function () {
+                        messageChat.click()
+                    }
+                    changeIframeContent()[1].onclick = function () {
+                        messageChat.click()
+                    }
+
+                });
+
+                function changeIframeContent() {
+                    let iframe = document.getElementById("ifif");
+                    let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+                    let close1 = iframeDoc.querySelector("#closemessage1");
+                    let close2 = iframeDoc.querySelector("#closemessage2");
+           
+                    return [close1,close2]
+                }
+                
+               
+
+            </script>
+
+
+            <style>
+                .chattt {
+                    left: 16%;
+                    position: fixed;
+                    bottom: -21px;
+
+                }
+            </style>
+
+            <div class="col-4"></div>
+            <!-- Sidebar phải (thanh thông tin và giỏ hàng) -->
+            <div id="right-bar" class="col-md-3 py-2 px-4 bg-white d-lg-block d-none">
+                <!-- Số dư tài khoản -->
+                <div class="fs-4 d-flex align-items-center justify-content-star">
+                    <span>
+                        <div class="btn-group dropend mt-2">
+                            <button type="button" class="px-0 btn dropdown-toggle border-0" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span style="font-size: 1.6rem;" class="fa fa-bell "></span>
+                            </button>
+                            <ul class="dropdown-menu p-0">
+                                <ul class="list-group text-truncate">
+                                    <li class="list-group-item">Giao hàng thành công</li>
+                                    <li class="list-group-item">Khuyến mãi 20% đơn hàng từ 30000d</li>
+                                    <li class="list-group-item">Bánh kem mới</li>
+                                    <li class="list-group-item">Nước giải khát 0 calo</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </span>
+
+
+                    <div class="accout_1"><a href="accout.html"> <i class="fa fa-user ms-5 me-1"
+                                aria-hidden="true"></i></a></div>
+                </div>
+                <style>
+                    .accout_1 a {
+                        color: #212529;
+                    }
+                </style>
+                <!-- <h4 class="fw-bold ">Your Balance</h4>  -->
+                <div class="d-flex align-items-center border-0"
+                    style="padding: 26px; background-image: url('acset/image/your-blance.png');border-radius: 16px;">
+                    <div class="bg-white w-50 text-center py-3" style="border-radius: 16px;">
+                        <h4 class="fw-bold">900.000</h4>
+                    </div>
+                    <span>
+                        <i class="ms-3 text-white border-1 fa fa-camera fs-3" aria-hidden="true"></i>
+                        <i class="ms-3 text-white border-1 fa fa-camera fs-3" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <!-- Địa chỉ giao hàng -->
+                <div class="btn-group dropend mt-2">
+                    <button type="button" class="px-0 border-0 btn dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="pe-2 text-warning fa-solid fa-location-dot"></i>
+                        <span class="fw-bold">Địa chỉ </span>
+                    </button>
+                    <ul class="dropdown-menu border border-1 border-warning">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Hem aaa/123
+                                <br>
+                                An Hoa ,Ninh Kieu,Can Tho
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Đơn hàng gần đây -->
+                <div class="container recently-order">
+                    <div class="order-item d-flex align-items-center">
+                        <img src="acset/image/BEST.jpg" alt="Pepperoni Pizza" class="order-img">
+                        <div class="order-info">
+                            <h5>Trà dưa lưới</h5>
+                            <div class="d-flex align-items-center">
+                                <input type="checkbox" checked class="form-check-input me-2">
+                                <span class="mx-2">
+                                    <i class="mx-2 fw-bold fa fa-minus" aria-hidden="true"></i>
+                                    <span class="text-muted">X1</span>
+                                    <i class="mx-2 fw-bold fa fa-plus" aria-hidden="true"></i>
+                                </span>
+                                <span class="price"><strong>9.000 VND</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-item d-flex align-items-center">
+                        <img src="acset/image/BEST2.jpg" alt="Cheese Burger" class="order-img">
+                        <div class="order-info">
+                            <h5>Trà sữa sầu riêng</h5>
+                            <div class="d-flex align-items-center">
+                                <input type="checkbox" checked class="form-check-input me-2">
+                                <span class="mx-2">
+                                    <i class="mx-2 fw-bold fa fa-minus" aria-hidden="true"></i>
+                                    <span class="text-muted">X1</span>
+                                    <i class="mx-2 fw-bold fa fa-plus" aria-hidden="true"></i>
+                                </span>
+                                <span class="price"><strong>10.000 VND</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-item d-flex align-items-center">
+                        <img src="acset/image/BEST3.jpg" alt="Vegan Pizza" class="order-img">
+                        <div class="order-info">
+                            <h5>Khoai tây lốc xoáy</h5>
+                            <div class="d-flex align-items-center">
+                                <input type="checkbox" checked class="form-check-input me-2">
+                                <span class="mx-2">
+                                    <i class="mx-2 fw-bold fa fa-minus" aria-hidden="true"></i>
+                                    <span class="text-muted">X1</span>
+                                    <i class="mx-2 fw-bold fa fa-plus" aria-hidden="true"></i>
+                                </span>
+                                <span class="price"><strong>15.000 VND</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-item d-flex align-items-center">
+                        <img src="acset/image/BEST4.jpg" alt="Vegan Pizza" class="order-img">
+                        <div class="order-info">
+                            <h5>Xoài lắc</h5>
+                            <div class="d-flex align-items-center">
+                                <input type="checkbox" checked class="form-check-input me-2">
+                                <span class="mx-2">
+                                    <i class="mx-2 fw-bold fa fa-minus" aria-hidden="true"></i>
+                                    <span class="text-muted">X1</span>
+                                    <i class="mx-2 fw-bold fa fa-plus" aria-hidden="true"></i>
+                                </span>
+                                <span class="price"><strong>3.000 VND</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <hr> -->
+                <div class="right-bar__footer">
+                    <div class="text-secondary d-flex">
+                        <p>Phí vận chuyển miễn phí</p>
+                        <p class="ms-auto ">50.000 VND</p>
+                    </div>
+                    <div class="d-flex">
+                        <p class="fw-bold fs-5">Tổng </p>
+                        <p class="ms-auto ">45.000 VND</p>
+                    </div>
+
+                    <button class="btn py-3 w-100 text-dark fw-medium" style="background-color: #f5f5f5;">
+                        <i class="text-warning fa-solid fa-ticket"></i>
+                        Nhập mã voucher ?
+
+                    </button>
+                    <div class="go_cart">
+                        <a href="add_cart.html">
+                            <button class="btn py-3 w-100 mt-3" style="background-color: #f5f5f5;color: #f6bb1d;">
+                                Đi đến giỏ hàng
+                                <i class="bi bi-cart me-2"></i>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="buy_now">
+                        <a href="payment.html">
+                            <button class="btn py-3 w-100 mt-2 text-white " style="background-color: #f6bb1d;">Mua
+                                ngay</button>
+
+                    </div>
+                </div>
+
+
+                </a>
+
+            </div>
+
+
+
+            <!-- nav-footer  -->
+            <div id="nav-footer" style="z-index: 9999;">
+                <div class="d-flex d-lg-none position-fixed fixed-bottom justify-content-between bg-warning p-2 fs-4">
+                    <span class="phone">
+                        <style>
+                            .phone a {
+                                color: #212529;
+                            }
+                        </style>
+                        <a href="index.html"> <i class="fa fa-home" aria-hidden="true"></i></a>
+                    </span>
+                    <span class="phone">
+                        <a href="message.html"> <i class="fa-brands fa-rocketchat"></i></a>
+                    </span>
+                    <span class="phone">
+                        <a href="add_cart.html"><i class="bi bi-cart"></i></a>
+                    </span>
+                    <span class="phone">
+                        <a href="like_food.html"> <i class="fa-solid fa-heart"></i> </a>
+                    </span>
+                    <span class="phone">
+                        <a href="accout.html"> <i class="fa fa-user" aria-hidden="true"></i></a>
+                    </span>
+                </div>
+
+            </div>
+      
+           
+                            
+
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
+
+
+    </div>
+    <script>
+        let a = document.querySelectorAll('#left-bar .nav .nav-link');
+
+        a.forEach(item => {
+            item.addEventListener('click', function (e) {
+                a.forEach(e => e.classList.remove('hover-left-bar'))
+                item.classList.add('hover-left-bar')
+            });
+        });
+
+
+        // su kien tang danh sach san pham gan day 
+        let plus = document.getElementsByClassName('mx-2 fw-bold fa fa-plus')
+        let minus = document.getElementsByClassName('mx-2 fw-bold fa fa-minus')
+
+        let showCounterProduct = document
+            .getElementsByClassName('d-flex align-items-center')[0] 
+            .getElementsByClassName('text-muted'); 
+        let counterProduct = 1
+        Array.from(plus).forEach(plusChild => {
+            plusChild.onclick = function (e) {
+                counterProduct ++
+                this.previousElementSibling.textContent = `X${counterProduct}`      
+            }
+        });
+     
+        Array.from(minus).forEach(minusChild => {
+            minusChild.onclick = function (e) {
+                counterProduct = counterProduct > 1 ? --counterProduct : 1;
+                this.nextElementSibling.textContent = `X${counterProduct}`
+            }
+        });
+     
+
+
+
+    </script>
+
+    
+
+
+</body>
+
+</html>

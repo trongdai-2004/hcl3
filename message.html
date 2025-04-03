@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat box</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="acset/css/message.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <style>
+
+    </style>
+    <div style="height: 100vh;" class="box">
+        <div class="chatbox-wrapper">
+            <!-- chatbox main  -->
+            <div class="chatbox-main">
+                <div class="chatbox-main__header d-flex justify-content-around p-lg-3 p-2">
+                    <span class="">
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span>Tin Nhắn</span>
+                    </span>
+                    <div class="chat-1">
+                        <style>
+                            .chat-1 a{
+                                color: black;
+
+                            }
+                        </style>
+                    <a href="index.html"><span id="closemessage1"><i class="fa-classic fa-solid fa-maximize fa-fw"></i></span></a>
+                    </div>
+                </div>
+                <div class="chatbox-main__body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <img src="./acset/image/gemini.png" style="width: 1.6rem;" alt="">
+                            Gemini Food
+                        </li>
+                        <li class="list-group-item">
+                            <img src="./acset/image/anime.png" style="width: 1.6rem;" alt="">
+                            Ngọc Tiên
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- chatbox-detail  -->
+            <div class="chatbox-detail">
+                <div class="chatbox-detail__header d-flex justify-content-between p-lg-3 p-2 bg-warning">
+                        <span id="back-cbmain"><i class="fa fa-backward" aria-hidden="true"></i></span>
+                        <span>
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <span>Gemini Food</span>
+                        </span>
+                        <span id="closemessage2"><i class="fa-classic fa-solid fa-maximize fa-fw" aria-hidden="true"></i></span>
+                </div>
+                <div class="chatbox-detail__body d-flex flex-column mt-2">
+                    <div class="receive mb-lg-3 p-2 mx-3 mb-2">Xin chào</div>
+                    <!-- <div class="send align-self-end mb-lg-3 p-2 mx-3 my-2">dsd</div> -->
+                </div>
+                <div class="chatbox-detail__footer d-flex justify-content-around py-3 bg-white">
+                    <div class="p-2">
+                        <i class="fa fa-plus" aria-hidden="true" onclick="document.getElementById('fileInput').click()"></i>
+                        <input class="d-none" type="file" id="fileInput">
+                    </div>
+                    <input id="input-send" type="text" class="flex-grow-1 p-1">
+                    <div id="btn-send" class="p-2"><i class="fa-solid fa-paper-plane"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   
+    <script type="module" src="acset/js/event-button.js"></script>
+</body>
+</html>

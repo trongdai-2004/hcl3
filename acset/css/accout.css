@@ -1,0 +1,263 @@
+:root {
+    --primary-color: #f6bb1d;
+    --background-color: #f2efefe8;
+    --text-color: #a7a0b4;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+
+#left-bar .nav .nav-link {
+    border-radius: 16px;
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+    font-weight: 680 !important;
+
+}
+
+/* #left-bar .nav .nav-link:first-child:not(:hover) {
+    background-color: var(--primary-color);
+    color: white;
+
+} */
+
+#left-bar .nav:has(.nav-link:hover) .nav-link:first-child:not(:hover) {
+    background-color: transparent;
+    color: var(--text-color)
+}
+
+#left-bar .nav .nav-link:hover {
+    border-radius: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+
+}
+
+#left-bar .nav .nav-link:hover {}
+
+
+#search-home {
+    /* border-radius: 16px; */
+    border: none;
+}
+
+#search-home:focus {
+    outline: none !important;
+    box-shadow: var(--primary-color) !important;
+    border: none !important;
+    filter: drop-shadow(0 0 0.25rem var(--primary-color));
+}
+
+.banner {
+    width: 100%;
+    height: 16%;
+    overflow: hidden;
+    background-image: url('./img/baner.png');
+    background-size: cover;
+}
+
+@media (max-width: 36rem) {
+    .banner{
+        height: 10%;
+    }
+ 
+}
+
+.category {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.category:hover{
+    transform: scale(1.1);
+}
+
+
+.category__img {
+    background-image: url('./img/cake.png');
+    width: 130px;
+    height: 60px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.category__name {}
+
+.card-food {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.card-food > div{
+
+}
+
+.card-food:hover {
+    transform: scale(1.1);
+
+}
+
+.card-food img {
+    height: 140px;
+    width: auto;
+}
+
+.card-food .card-rate {
+    color: var(--primary-color);
+}
+
+#left-bar {
+    position: fixed;
+    margin-left: 6px;
+}
+
+#main-content{
+
+}       
+
+#right-bar {
+    position: fixed;
+    right: 0;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.order-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.order-info {
+    flex: 1;
+}
+
+.order-item .order-info input:checked{
+    background-color: var(--primary-color);
+    border: none !important;
+
+}
+
+.price {
+    font-weight: bold;
+    color: #ff9800;
+    margin-left: auto;
+}
+
+.right-bar__footer button {
+    background-color: var(--primary-color);
+    font-weight: bold;
+    border: 1px solid var(--primary-color);
+    border-radius: 16px;
+
+}
+
+@keyframes hult{
+    from{
+        transform: scale(1.05);
+    }
+}
+
+.right-bar__footer button:last-child{
+    /* animation: hult 1s infinite alternate; */
+    transition: all 0.3s ease-in-out;
+}
+.right-bar__footer button:last-child:hover{
+    transform: scale(1.05);
+}
+
+.recently-order{
+    max-height: 228px;
+    overflow-y: auto;
+    scrollbar-color: var(--primary-color) var(--primary-color);
+    scrollbar-width: thin; 
+}
+
+.recently-order::-webkit-scrollbar-track{
+    background-color: var(--primary-color);
+}
+.chatbox-wrapper{
+    height: 360px;
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.2rem;
+    left: 0.5rem;
+    background-color: white;
+    display: none;  
+}
+
+.chatbox-wrapper-show{
+    display: block;
+}
+
+
+.chatbox-main,
+.chatbox-detail{
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.chatbox-main__header,
+.chatbox-detail__header{
+    background-color: var(--primary-color);
+    border-right: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+
+}
+
+
+
+
+.chatbox-detail__body .send{
+    height: 2.6rem;
+    max-width:70%;
+    margin-bottom: 0.5rem;
+    line-height: 2.4rem;
+    align-self: flex-start;
+    padding: 0 0.5rem 0;
+    border-radius: 10px;
+
+
+}
+.chatbox-detail__body .receive{
+    height: 2.6rem;
+    max-width:70%;
+    margin-bottom: 0.5rem;
+    line-height: 2.4rem;
+    align-self: flex-end;
+    padding: 0 0.5rem 0;
+    border-radius: 10px;
+
+}
+
+.chatbox-detail__footer{
+}
+
+.chatbox-detail__footer input {
+    width: 100%;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    
+}
+
+
+
+

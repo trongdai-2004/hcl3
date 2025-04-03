@@ -1,0 +1,297 @@
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="acset/css/test.css?v=1.1">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>trang admin chủ</title>
+</head>
+
+<body>
+
+  <div class="section-one">
+    <div class="row">
+      <div class="col-4">
+        <div class="logo">
+          <img src="acset/image/logo.jpg" alt="logo">
+          <div class="title_logo"> <h4> SNACKS(YDK)</h4></div>
+
+          <style>
+            .title_logo {
+                background: radial-gradient(circle, yellow, orange, red);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        </style>
+        </div>
+        <div class="mauxanh">
+         
+        </div>
+        <div class="home">
+
+          <a href="index(admin).html"> <button class="title">
+              <i class="fa-solid fa-house"></i>TRANG CHỦ 
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="total-product">
+          <p>TỔNG SẢN PHẨM </p>
+          <h4>29</h4>
+          <div class="icon">
+          <i class="fa-brands fa-product-hunt"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="total-price">
+          <p>TỔNG DOANH THU</p>
+          <h4>9.000.000 VND</h4> 
+          <div class="icon">
+          <i class="fa-solid fa-sack-dollar"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="order">
+          <p>TỔNG ĐƠN HÀNG  </p>
+          <h4>19 </h4>
+          <div class="icon">
+          <i class="fa-brands fa-first-order-alt"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="total-order">
+          <p>TỔNG NGƯỜI DÙNG </p>
+          <h4>9 </h4>
+          <div class="icon">
+          <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <a href="product(admin).html">
+          <button class="product">
+            <i class="fa-brands fa-product-hunt"></i> SẢN PHẨM 
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <a href="order(admin).html">
+          <button class="news">
+            <i class="fa-regular fa-calendar-plus"></i> ĐƠN HÀNG 
+          </button>
+        </a>
+      </div>
+      
+        <div class="col-8">
+
+            <style>
+               
+            </style>
+        </head>
+        <body>
+            
+            <h1 class="text-center">Thống Kê Doanh Thu</h1>
+
+            <!-- Hai biểu đồ trên -->
+            <div class="charts-wrapper">
+                <div class="chart-container">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            
+                <div class="chart-container">
+                    <canvas id="salesPieChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Biểu đồ thứ ba bên dưới -->
+            <div class="chart-container-full">
+                <canvas id="lineChart"></canvas>
+            </div>
+            
+            <style>
+                .charts-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px; /* Khoảng cách giữa hai biểu đồ */
+                    flex-wrap: wrap; /* Hiển thị tốt trên màn hình nhỏ */
+                }
+            
+                .chart-container {
+                    width: 45%;
+                    max-width: 400px;
+                    height: 300px;
+                }
+            
+                .chart-container-full {
+                    width: 90%;
+                    max-width: 800px;
+                    height: 300px;
+                    margin: 20px auto; /* Căn giữa biểu đồ thứ ba */
+                }
+            </style>
+            
+            <script>
+                // Dữ liệu doanh thu giả lập (triệu VND)
+                const monthlySales = [120, 150, 180, 200, 250, 300, 400, 350, 320, 310, 290, 280];
+                const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            
+                // Biểu đồ cột
+                const barCtx = document.getElementById('salesChart').getContext('2d');
+                new Chart(barCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Doanh Thu (Triệu VND)',
+                            data: monthlySales,
+                            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 500,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + 'M';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            
+                // Biểu đồ tròn
+                const pieCtx = document.getElementById('salesPieChart').getContext('2d');
+                new Chart(pieCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: monthlySales,
+                            backgroundColor: [
+                                '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', 
+                                '#C9CBCF', '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'
+                            ]
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            
+                // Biểu đồ đường
+                const lineCtx = document.getElementById('lineChart').getContext('2d');
+                new Chart(lineCtx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Xu hướng Doanh Thu',
+                            data: monthlySales,
+                            borderColor: '#FF5733',
+                            backgroundColor: 'rgba(255, 87, 51, 0.2)',
+                            borderWidth: 2,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+            
+
+
+
+
+            
+         
+        
+
+   
+        </div>
+     
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <a href="user(admin).html"><button class="order-1">
+            <i class="fa-solid fa-cart-shopping"></i> NGƯỜI DÙNG 
+          </button>
+        </a>
+      </div>
+    </div>
+   
+   
+    <div class="row">
+      <div class="col-4">
+        <div class="header">
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <style>
+    i{
+          margin-right: 10px;
+        }
+  </style>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

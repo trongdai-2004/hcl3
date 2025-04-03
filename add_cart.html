@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>giỏ hàng </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <!-- File CSS tuỳ chỉnh -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="acset/css/add_cart.css">
+</head>
+
+<body>
+    <div class="container-fluid m-0 p-0" style="overflow-x: hidden;">
+        <div class="row">
+            <!-- Sidebar trái -->
+            <div id="left-bar" class="d-none d-lg-flex bg-white col-md-2 min-vh-100 d-flex flex-column p-4">
+                <!-- Logo -->
+                <div class="mb-4">
+                    <img src="acset/image/logo.jpg" alt="Logo" class="img-fluid" />
+                </div>
+
+                <!-- Menu -->
+                <nav class="nav flex-column mb-4">
+                    <a class="nav-link py-3" href="index.html">
+                        <i class="bi bi-house me-2"></i> Trang chủ
+                    </a>
+                    <a class="nav-link py-3" href="like_food.html">
+                        <i class="bi bi-heart me-2"></i>Yêu thích
+                    </a>
+
+
+                    <style>
+                        .shooping_1 {
+                            background-color: var(--primary-color);
+                            color: #fff !important;
+                        }
+                    </style>
+                    <a class="nav-link py-3 shooping_1" href="add_cart.html">
+                        <i class="bi bi-cart me-2"></i> Giỏ hàng
+                    </a>
+
+                    <a class="nav-link py-3" href="setting.html">
+                        <i class="bi bi-gear me-2"></i> Cài đặt
+                    </a>
+
+                    <a id="messagechat" class="nav-link py-3" href="#">
+                        <i class="bi bi-chat me-2"></i> Nhắn tin
+                    </a>
+
+                </nav>
+
+
+
+
+                <!-- Box nâng cấp tài khoản -->
+                <!-- <div class="mt-auto p-3 text-center upgrade-box rounded">
+                    <h6>Upgrade Your Account</h6>
+                    <p class="mb-2">Get Free Shipping</p>
+                    <button class="btn btn-sm btn-warning">Upgrade</button>
+                </div> -->
+            </div>
+            <div class="col-2"></div>
+            <!-- Nội dung chính -->
+            <div id="main-content" class="col-md-7 p-3">
+                <!-- Thanh tiêu đề và tìm kiếm -->
+                <!-- <div style="background-color: #f3f0f0;"
+                    class="py-2 py-lg-3 position-sticky sticky-top d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h4 mb-0 fw-bold fs-2">Hello World</h1>
+                    <div class="input-group" style="max-width: 400px; border-radius: 16px;overflow: hidden;">
+                        <input id="search-home" type="text" class="form-control p-2"
+                            placeholder="   What do you want to eat today?" />
+                        <button class="btn btn-warning" type="button">
+                            <i class="bi bi-search text-white"></i>
+                        </button>
+                    </div>
+                </div> -->
+
+                <!-- <div class="banner">
+                    <iframe src="./carousel.html" width="100%" height="100%" frameborder="0"></iframe>
+                   
+                </div> -->
+
+                <!-- phan code se su dung -->
+
+
+                <style>
+                    .card {
+                        border: none;
+                        border-radius: 12px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .btn {
+                        padding: 12px 18px;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                        font-weight: bold;
+                    }
+
+                    .btn-primary {
+                        background-color: #F6BB1D;
+                        color: white;
+                        border: none;
+                    }
+
+                    .btn-primary:hover {
+                        background-color: #dc3545;
+                    }
+
+                    .btn-danger {
+                        background-color: #dc3545;
+                        color: white;
+                        border: none;
+                    }
+
+                    .btn-danger:hover {
+                        background-color: #c82333;
+                    }
+
+                    nav a {
+                        color: white;
+                        text-decoration: none;
+                        margin: 0 20px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        transition: color 0.3s;
+                    }
+
+                    nav a:hover {
+                        color: #17a2b8;
+                    }
+
+                    .product-image {
+                        border-radius: 10px;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .total-price {
+                        font-size: 22px;
+                        font-weight: bold;
+                        color: #F6BB1D;
+                    }
+
+                    .single-line-text {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 170px;
+                        color: orange;
+                        text-align: center;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: orange;
+                        font-weight: 700;
+                    }
+
+                    .img {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 15px;
+                        margin-bottom: 20px;
+                    }
+
+                    .img img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .price-label {
+                        margin-top: 15px;
+                        font-size: 18px;
+                        color: red;
+                    }
+
+                    .button-group {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .bookland span {
+                        display: inline-block;
+                        animation: wiggle 0.5s infinite alternate;
+                    }
+
+                    .bookland span:nth-child(odd) {
+                        animation-delay: 0.1s;
+                    }
+
+                    .bookland span:nth-child(even) {
+                        animation-delay: 0.2s;
+                    }
+
+                    @keyframes wiggle {
+                        0% {
+                            transform: rotate(-5deg);
+                        }
+
+                        100% {
+                            transform: rotate(5deg);
+                        }
+                    }
+                </style>
+                <h1 class="text-center text-    danger">Giỏ hàng của bạn</h1>
+
+                <section class="gradient-custom">
+                    <div class="container py-5">
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-md-8">
+                                <div class="card mb-4">
+                                    <div class="card-header py-3">
+                                        <h5 class="mb-0 text-center"></h5>
+                                    </div>
+                                    <div class="card-body">
+
+
+                                        <div class="row mb-4">
+                                            <style>
+                                                .product-image {
+                                                    object-fit: cover;
+                                                    width: 200px;
+                                                }
+                                            </style>
+                                            <div class="col-12 col-md-6 col-lg-3">
+                                                <img src="acset/image/banhngot2.jpg" class="w-100 product-image"
+                                                    alt="Sản phẩm 1" />
+                                            </div>
+
+                                            <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                                <p style="font-size: 25px;color:#17a2b8;" class="text-center">
+                                                    <strong>Bánh ngọt Pháp Mille Feuille </strong></p>
+                                                <p class="price-label  ">Giá: 50.000 đ</p>
+                                                <button class="btn btn-danger btn-sm ">Xóa</button>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                                <div class="d-flex mb-4 button-group">
+                                                    <button class="btn btn-primary px-2">-</button>
+                                                    <input type="number" value="1" min="1"
+                                                        class="form-control text-center"
+                                                        style="width: 60px;height: 50px;" readonly />
+                                                    <button class="btn btn-primary px-2">+</button>
+                                                </div>
+                                                <p class="text-start text-md-center total-price price_1">50.000 đ</p>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row mb-4">
+                                            <style>
+                                                .product-image {
+                                                    object-fit: cover;
+                                                    width: 200px;
+                                                }
+                                            </style>
+                                            <div class="col-12 col-md-6 col-lg-3">
+                                                <img src="acset/image/kemda5.jpg" class="w-100 product-image"
+                                                    alt="Sản phẩm 1" />
+                                            </div>
+
+                                            <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                                <p style="font-size: 25px;color:#17a2b8;" class="text-center">
+                                                    <strong>Kem bọc sữa </strong></p>
+                                                <p class="price-label  ">Giá: 30.000 đ</p>
+                                                <button class="btn btn-danger btn-sm ">Xóa</button>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                                <div class="d-flex mb-4 button-group">
+                                                    <button class="btn btn-primary px-2">-</button>
+                                                    <input type="number" value="1" min="1"
+                                                        class="form-control text-center"
+                                                        style="width: 60px;height: 50px;" readonly />
+                                                    <button class="btn btn-primary px-2">+</button>
+                                                </div>
+                                                <p class="text-start text-md-center total-price price_1">30.000 đ</p>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <hr class="my-4" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <style>
+                                .bill {
+                                    height: 31.3rem;
+                                    align-items: center;
+                                }
+
+                                .total-price-1 {
+                                    text-align: center;
+                                    margin-top: 15%;
+                                    font-size: 24px;
+                                }
+
+                                .total-price {
+                                    text-align: center;
+
+                                }
+                            </style>
+
+                            <div class="col-md-4">
+                                <div class="card mb-4 bill">
+                                    <div class="card-header py-3 ">
+                                        <h5 class="mb-0 text-center">HÓA ĐƠN</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                                Giá sản phẩm <span>80.000 đ</span>
+                                            </li>
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                                Shipping <span>0 đ</span>
+                                            </li>
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3 total-price-1">
+                                                <div><strong>Tổng cộng </strong></div>
+                                                <span class="total-price">  80.000 VND </span>
+                                            </li>
+                                            <style>
+                                                .total-price{
+                                                    margin: 10%;
+                                                }
+                                            </style>
+                                        </ul>
+                                        <style>
+                                            .pay {
+                                                margin-top: 55%;
+                                                margin-left: 25%;
+                                              
+
+                                            }
+                                        </style>
+                                        <a href="payment.html"><button
+                                                class="btn btn-primary btn-lg btn-block pay">Thanh toán</button></a>
+
+                                        <hr class="my-4" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <style>
+                    @media (max-width: 768px) {
+                        .card {
+                            padding: 15px;
+                        }
+
+                        .product-image {
+                            width: 100%;
+                            max-width: 150px;
+                            margin: 0 auto;
+                            display: block;
+                        }
+
+                        .button-group {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+
+                        .btn {
+                            width: 100%;
+                            margin-bottom: 5px;
+                        }
+
+                        .price-label {
+                            text-align: center;
+                        }
+
+                        .total-price {
+                            text-align: center;
+                        }
+
+                        .col-md-8,
+                        .col-md-4 {
+                            width: 100%;
+                        }
+
+                        .row.d-flex {
+                            flex-direction: column;
+                        }
+                        .pay {
+                            margin-left: 5%;
+
+                            
+                          
+
+                        }
+                        .price_1{
+                            margin-left: 40%;
+                        }
+                    }
+
+                    @media (max-width: 576px) {
+                        .product-image {
+                            width: 80%;
+                        }
+
+                        .text-center {
+                            font-size: 18px;
+                        }
+
+                        .btn {
+                            font-size: 14px;
+                            padding: 10px;
+                        }
+
+                        .price-label,
+                        .total-price {
+                            font-size: 18px;
+                        }
+                        .price_1{
+                            margin-left: 40%;
+                        }
+                        .pay {
+                            margin-left: 5%;
+                            margin-top: 70%;
+                        }
+                        
+                    }
+                </style>
+
+
+                <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+                    crossorigin="anonymous"></script>
+
+
+
+                <!-- ket thuc phan code se su dung -->
+
+            </div>
+
+
+            <div id="chatbox-wrapper-frame" class="chattt col-md-7 p-3">
+                <iframe id="ifif" src="./message.html" width="80%" height="520" frameborder="0"></iframe>
+
+            </div>
+            <script>
+  document.getElementById('chatbox-wrapper-frame').style.display = 'none'
+                let messageChat = document.getElementById('messagechat')
+                messageChat.addEventListener('click', function () {
+
+
+                    var chatbox = document.getElementById('chatbox-wrapper-frame');
+                    if (chatbox.style.display === 'none' || chatbox.style.display === '') {
+                        chatbox.style.display = 'block'; // Hiển thị nếu đang ẩn
+                    } else {
+                        chatbox.style.display = 'none'; // Ẩn nếu đang hiển thị
+                    }
+                    changeIframeContent()[0].onclick = function () {
+                        messageChat.click()
+                    }
+                    changeIframeContent()[1].onclick = function () {
+                        messageChat.click()
+                    }
+                });
+
+                function changeIframeContent() {
+                    let iframe = document.getElementById("ifif");
+                    let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+         
+                    let close1 = iframeDoc.querySelector("#closemessage1");
+                    let close2 = iframeDoc.querySelector("#closemessage2");
+           
+                    return [close1,close2]
+                }
+                
+               
+            </script>
+
+
+            <style>
+                .chattt {
+                    left: 16%;
+                    position: fixed;
+                    bottom: -21px;
+
+                }
+            </style>
+
+
+
+            <div class="col-4"></div>
+            <!-- Sidebar phải (thanh thông tin và giỏ hàng) -->
+            <div id="right-bar" class="col-md-3 py-2 px-4 bg-white d-lg-block d-none">
+                <!-- Số dư tài khoản -->
+                <div class="fs-4 d-flex align-items-center justify-content-star">
+                    <span>
+                        <div class="btn-group dropend mt-2">
+                            <button type="button" class="px-0 btn dropdown-toggle border-0" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span style="font-size: 1.6rem;" class="fa fa-bell "></span>
+                            </button>
+                            <ul class="dropdown-menu p-0">
+                                <ul class="list-group text-truncate">
+                                    <li class="list-group-item">Giao hàng thành công</li>
+                                    <li class="list-group-item">Khuyến mãi 20% đơn hàng từ 30000d</li>
+                                    <li class="list-group-item">Bánh kem mới</li>
+                                    <li class="list-group-item">Nước giải khát 0 calo</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </span>
+                    <div class="accout_1"><a href="accout.html"> <i class="fa fa-user ms-5 me-1"
+                                aria-hidden="true"></i></a></div>
+                </div>
+                <style>
+                    .accout_1 a {
+                        color: #212529;
+                    }
+                </style>
+                <style>
+                    .accout_1 a {
+                        color: #212529;
+                    }
+                </style>
+                <!-- <h4 class="fw-bold ">Your Balance</h4>  -->
+                <div class="d-flex align-items-center border-0"
+                    style="padding: 26px; background-image: url('acset/image/your-blance.png');border-radius: 16px;">
+                    <div class="bg-white w-50 text-center py-3" style="border-radius: 16px;">
+                        <h3 class="fw-bold">900.000</h3>
+                    </div>
+                    <span>
+                        <i class="ms-3 text-white border-1 fa fa-camera fs-3" aria-hidden="true"></i>
+                        <i class="ms-3 text-white border-1 fa fa-camera fs-3" aria-hidden="true"></i>
+                    </span>
+                </div>
+                
+
+                <!-- Địa chỉ giao hàng -->
+                <div class="btn-group dropend mt-2">
+                    <button type="button" class="px-0 border-0 btn dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="pe-2 text-warning fa-solid fa-location-dot"></i>
+                        <span class="fw-bold">Địa chỉ </span>
+                    </button>
+                    <ul class="dropdown-menu border border-1 border-warning">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Hem aaa/123
+                                <br>
+                                An Hoa ,Ninh Kieu,Can Tho
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Đơn hàng gần đây -->
+                <div class="container recently-order">
+                    <div class="order-item d-flex align-items-center">
+                        <img src="acset/image/BEST.jpg" alt="Pepperoni Pizza" class="order-img">
+                        <div class="order-info">
+                            <h5>Trà dưa lưới</h5>
+                            <div class="d-flex align-items-center">
+                                <input type="checkbox" checked class="form-check-input me-2">
+                                <span class="mx-2">
+                                    <i class="mx-2 fw-bold fa fa-minus" aria-hidden="true"></i>
+                                    <span class="text-muted">X1</span>
+                                    <i class="mx-2 fw-bold fa fa-plus" aria-hidden="true"></i>
+                                </span>
+                                <span class="price"><strong>9.000 VND</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-item d-flex align-items-center">
+                        <img src="acset/image/BEST2.jpg" alt="Cheese Burger" class="order-img">
+                        <div class="order-info">
+                            <h5>Trà sữa sầu riêng</h5>
+                            <div class="d-flex align-items-center">
+                                <input type="checkbox" checked class="form-check-input me-2">
+                                <span class="mx-2">
+                                    <i class="mx-2 fw-bold fa fa-minus" aria-hidden="true"></i>
+                                    <span class="text-muted">X1</span>
+                                    <i class="mx-2 fw-bold fa fa-plus" aria-hidden="true"></i>
+                                </span>
+                                <span class="price"><strong>10.000 VND</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-item d-flex align-items-center">
+                        <img src="acset/image/BEST3.jpg" alt="Vegan Pizza" class="order-img">
+                        <div class="order-info">
+                            <h5>Khoai tây lốc xoáy</h5>
+                            <div class="d-flex align-items-center">
+                                <input type="checkbox" checked class="form-check-input me-2">
+                                <span class="mx-2">
+                                    <i class="mx-2 fw-bold fa fa-minus" aria-hidden="true"></i>
+                                    <span class="text-muted">X1</span>
+                                    <i class="mx-2 fw-bold fa fa-plus" aria-hidden="true"></i>
+                                </span>
+                                <span class="price"><strong>15.000 VND</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-item d-flex align-items-center">
+                        <img src="acset/image/BEST4.jpg" alt="Vegan Pizza" class="order-img">
+                        <div class="order-info">
+                            <h5>Xoài lắc</h5>
+                            <div class="d-flex align-items-center">
+                                <input type="checkbox" checked class="form-check-input me-2">
+                                <span class="mx-2">
+                                    <i class="mx-2 fw-bold fa fa-minus" aria-hidden="true"></i>
+                                    <span class="text-muted">X1</span>
+                                    <i class="mx-2 fw-bold fa fa-plus" aria-hidden="true"></i>
+                                </span>
+                                <span class="price"><strong>3.000 VND</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <hr> -->
+                <div class="right-bar__footer">
+                    <div class="text-secondary d-flex">
+                        <p>Phí ship</p>
+                        <p class="ms-auto ">9.000 VND </p>
+                    </div>
+                    <div class="d-flex">
+                        <p class="fw-bold fs-5">Tổng</p>
+                        <p class="ms-auto ">90.000 VND</p>
+                    </div>
+
+                    <button class="btn py-3 w-100 text-dark fw-medium" style="background-color: #f5f5f5;">
+                        <i class="text-warning fa-solid fa-ticket"></i>
+                        Nhập mã voucher ?
+
+                    </button>
+
+
+                    <button class="btn py-3 w-100 mt-3" style="background-color: #f5f5f5;color: #f6bb1d;">
+                        Đi đến giỏ hàng
+                        <i class="bi bi-cart me-2"></i>
+                    </button>
+
+                    <div class="pay">
+                        <a href="payment.html">
+                            <button class="btn py-3 w-100 mt-2 text-white " style="background-color: #f6bb1d;">Buy
+                                Now!</button>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- nav-footer  -->
+            <div id="nav-footer" style="z-index: 1;">
+                <div class="d-flex d-lg-none position-fixed fixed-bottom justify-content-between bg-warning p-2 fs-4">
+                    <span class="phone">
+                        <style>
+                            .phone a {
+                                color: #212529;
+                            }
+                        </style>
+                        <a href="index.html"> <i class="fa fa-home" aria-hidden="true"></i></a>
+                    </span>
+                    <span class="phone">
+                        <a href="message.html"> <i class="fa-brands fa-rocketchat"></i></a>
+                    </span>
+                    <span class="phone">
+                        <a href="add_cart.html"><i class="bi bi-cart"></i></a>
+                    </span>
+                    <span class="phone">
+                        <a href="like_food.html"> <i class="fa-solid fa-heart"></i> </a>
+                    </span>
+                    <span class="phone">
+                        <a href="accout.html"> <i class="fa fa-user" aria-hidden="true"></i></a>
+                    </span>
+                </div>
+
+            </div>
+            <script>
+                document.querySelector('#messagechat').onclick = function () {
+
+                    let messageBox = document.querySelector('.chatbox-wrapper')
+                    // messageBox.style.display = 'block'
+                    messageBox.style.display = (messageBox.style.display === "none" || messageBox.style.display ===
+                        "") ? "block" : "none";
+                }
+
+
+
+                // su kien tang danh sach san pham gan day 
+                let plus = document.getElementsByClassName('mx-2 fw-bold fa fa-plus')
+                let minus = document.getElementsByClassName('mx-2 fw-bold fa fa-minus')
+
+                let showCounterProduct = document
+                    .getElementsByClassName('d-flex align-items-center')[0]
+                    .getElementsByClassName('text-muted');
+                let counterProduct = 1
+                Array.from(plus).forEach(plusChild => {
+                    plusChild.onclick = function (e) {
+                        counterProduct++
+                        this.previousElementSibling.textContent = `X${counterProduct}`
+                    }
+                });
+
+                Array.from(minus).forEach(minusChild => {
+                    minusChild.onclick = function (e) {
+                        counterProduct = counterProduct > 1 ? --counterProduct : 1;
+                        this.nextElementSibling.textContent = `X${counterProduct}`
+                    }
+                });
+
+            </script>
+
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

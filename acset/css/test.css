@@ -1,0 +1,463 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.section-one {
+  padding: 20px;
+  border-radius: 5px;
+
+}
+.section-one .row .col-4 .mauxanh{
+  background-color: #E2F9FF;
+  position: relative;
+  z-index: 9999;
+  top: 70.5px;
+  width: 21.9%;
+  height: 30px;
+  position: fixed;
+  color:#ECF0F1;
+  text-align: center;
+}
+
+.section-one .row .col-4 .logo{
+  background-color: #E2F9FF;
+  display:flex ;
+  text-align: left;
+  width: 21.9%;
+  border-radius: 10px;
+  position: relative;
+  top: 1px;
+  border-radius: 10px 0px 0 0;
+  padding: 10px 100px;
+  position: fixed;
+  color: #ECF0F1;
+
+}
+.section-one .row .col-4 .logo img{
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 99999;
+  
+}
+.section-one .row .col-4 .logo h4{
+  margin-left: 10px;
+  margin-top: 15px;
+  z-index: 999;
+  color:#264580;
+  font-size: 20px;
+}
+
+.section-one .home {
+  background-color: #fff;
+  color: #ffff;
+  height: 100%;
+  margin-bottom: 0;
+  text-align: left;
+  border-radius: 10px;
+  width: 70%;
+
+}
+
+.section-one .home a .title {
+  background-color: #E2F9FF;
+  color: #264580 !important;;
+  border: none;
+  width: 21.9%;
+  text-align: left;
+  height: 80px;
+  padding: 10px 20px;
+  position: fixed;
+  z-index: 999;
+  top: 100px;
+  font-size: 25px;
+
+}
+
+.section-one .home a .title:hover {
+  background-color: #AFBBFF!important;
+  width: 21.9%;
+  color: black !important;
+  
+}
+
+.section-one .col-2 .total-product {
+  background-color: #FFFFFF;
+  border: 1px solid #EDEDED;
+  text-align: left;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 120px;
+  margin-top: 30px;
+  position: relative;
+}
+.section-one .col-2 .total-product .icon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 50px;
+  color:blue;
+}
+
+
+.section-one .col-2 .total-price {
+  background-color: #FFFFFF;
+  border: 1px solid #EDEDED;
+  text-align: left;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 120px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  position: relative;
+}
+.section-one .col-2 .total-price .icon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 50px;
+  color:black;
+}
+
+.section-one .col-2 .order {
+  background-color: #ffff;
+  border: 1px solid #EDEDED;
+  text-align: left;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 120px;
+  margin-top: 30px;
+  position: relative;
+}
+.section-one .col-2 .order .icon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 50px;
+  color:yellowgreen;
+}
+
+.section-one .col-2 .total-order {
+  background-color: #FFFFFF;
+  border: 1px solid #EDEDED;
+  text-align: left;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 120px;
+  margin-top: 30px;
+  position: relative;
+}
+.section-one .col-2 .total-order .icon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 50px;
+  color:#15B79F;
+}
+
+.section-one .row .product {
+  background-color: #E2F9FF;
+  color: #264580;
+  text-align: left;
+  position: relative;
+  top: 180px;
+  width: 21.9%;
+  height: 80px;
+  border: none;
+  padding: 10px 20px;
+  position: fixed;
+  z-index: 999;
+  font-size: 25px;
+}
+
+.section-one .row .product:hover {
+  background-color: #AFBBFF;
+  color: black;
+
+
+}
+
+.section-one .col-2 .today-revenue {
+  background-color: #CB63FF;
+  border: 1px solid blue;
+  text-align: right;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 120px;
+}
+
+.section-one .col-2 .weekly-revenue {
+  background-color: #CB63FF;
+  border: 1px solid blue;
+  text-align: right;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 120px;
+}
+
+.section-one .col-2 .monthly-revenue {
+  background-color: #CB63FF;
+  border: 1px solid blue;
+  text-align: right;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 120px;
+}
+
+
+.section-one .row .news {
+  background-color: #E2F9FF;
+  color: #264580 !important;
+  text-align: left;
+  width: 21.9%;
+  border: none;
+  height: 80px;
+  position: relative;
+  top: 260px;
+  padding: 10px 20px;
+  position: fixed;
+  z-index: 999;
+  font-size: 25px;
+
+}
+
+.section-one .row .news:hover {
+  background-color: #AFBBFF;
+  color: black !important;
+}
+
+.section-one .row .order-1 {
+  background-color: #E2F9FF;
+  color: #264580 !important;
+  text-align: left;
+  width: 21.9%;
+  border: none;
+  height: 80px;
+  /* position: relative; */
+  top: 340px;
+  padding: 10px 20px;
+  position:fixed;
+  z-index: 99999;
+  font-size: 25px;
+}
+
+.section-one .row .order-1:hover {
+  background-color: #AFBBFF;
+  color: black !important;
+}
+
+.section-one .row .member {
+  background-color: #E2F9FF;
+  color: #264580;
+  text-align: left;
+  width: 21.9%;
+  border: none;
+  height: 80px;
+  position: relative;
+  top:415px;
+  padding: 10px 20px;
+  position:fixed;
+  z-index: 999;
+  font-size: 25px;
+}
+
+.section-one .row .member:hover {
+  background-color: #AFBBFF;
+  color: black;
+}
+
+.section-one .row .revenue {
+  background-color: #E2F9FF;
+  color: #264580;
+  text-align: left;
+  width: 21.9%;
+  border: none;
+  height: 80px;
+  position: relative;
+  top: 496px;
+  padding: 10px 20px;
+  position:fixed;
+  z-index: 999;
+  font-size: 25px;
+
+}
+
+.section-one .row .revenue:hover {
+  background-color: #AFBBFF;
+  color: black;
+}
+
+.section-two {
+  width: 100%;
+  background: linear-gradient(to bottom, #0000ff, #00008b);
+  height: 70px;
+  background: linear-gradient(to bottom, #0000ff, #00008b);
+}
+
+.section-one .row .col-4 .header {
+  background-color: #E2F9FF;
+  color: black;
+  text-align: left;
+  width: 21.9%;
+  border: none;
+  height: 500px;
+  position: relative;
+  top: 408px;
+  padding: 10px 20px;
+  position: fixed;
+  z-index: 99;
+
+ 
+}
+
+/* biểu đồ  */
+  .months{
+    margin-left: 13px;
+  }
+   .General-Chart{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+   }
+   .General-Chart .col-5{
+    position: relative;
+    left: -10px;
+   }
+   .General-Chart .col-3{
+    position: relative;
+    left: -220px;
+   }
+  
+  .chart {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 450px;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .chart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Biểu đồ cột */
+  .bar-chart {
+    display: flex;
+    justify-content: space-around; /* Thay đổi từ space-between thành space-around */
+    align-items: flex-end;
+    height: 350px; /* Chiều cao của biểu đồ */
+    margin-top: 20px;
+    border-left: 4px solid #ddd; /* Trục Y */
+    border-bottom: 4px solid #ddd; /* Trục X */
+    padding-left: 10px;
+    padding-right: 10px; /* Đảm bảo có khoảng trống hai bên */
+    position: relative;
+  }
+  
+  
+  .bar {
+    width: 30px; /* Tăng chiều rộng mỗi cột */
+    background: #6a5af9;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.3s ease;
+    margin: 0 5px; /* Thêm khoảng cách giữa các cột */
+  }
+  
+  .bar:hover {
+    opacity: 0.9;
+    transform: scale(1.2); /* Tăng kích thước khi hover */
+  }
+  
+  
+  .labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-left: 10px;
+    width: 260px;
+  }
+  
+  .labels span {
+    font-size: 12px;
+    color: #555;
+  }
+  
+  /* Vạch số trên trục Y */
+  .y-axis {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    bottom: 30px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .y-label {
+    margin-right: 19px;
+
+  }
+  
+  
+  /* Biểu đồ hình tròn */
+  .pie-chart {
+    width: 300px;
+    height: 270px;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  .legend {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .legend div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .legend span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .desktop {
+    background: #6a5af9;
+  }
+  
+  .tablet {
+    background: #f59e0b;
+  }
+  
+  .phone {
+    background: #10b981;
+  }
+  
+  h2 {
+    margin: 0 0 15px;
+    font-size: 18px;
+    color: #444;
+  }
+
+/* biểu đồ  */
+  

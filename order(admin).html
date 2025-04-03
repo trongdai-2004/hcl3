@@ -1,0 +1,354 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="acset/css/test.css">
+  <title>trang admin</title>
+</head>
+
+<body>
+
+  <div class="section-one">
+    <div class="row">
+      <div class="col-4">
+        <div class="logo">
+          <img src="acset/image/logo.jpg" alt="">
+          <div class="title_logo">
+            <h4> SNACKS(YDK)</h4>
+
+            <style>
+              .title_logo {
+                  background: radial-gradient(circle, yellow, orange, red);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+              }
+          </style>
+          </div>
+        </div>
+        <div class="mauxanh">
+
+        </div>
+        <div class="home">
+
+          <a href="index(admin).html"> <button class="title">
+              <i class="fa-solid fa-house"></i>TRANG CHỦ 
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div class="container">
+          <style>
+            .title-1 {
+              color: black;
+              font-size: 35px;
+              text-align: center;
+              font-weight: 600;
+            }
+            
+            .bnt-form-1 {
+              width: 80px;
+              height: auto;
+              margin-left: 3px;
+              border: none;
+
+            }
+
+            .form-1 {
+              position: relative;
+              top: -10px;
+              left: 650px;
+              width: 320px;
+              display: flex;
+              border-radius: 10px;
+              
+
+
+            }
+         
+          </style>
+          <h2 class="my-4 title-1"> QUẢN LÝ ĐƠN HÀNG</h2>
+
+          <form method="GET" action="#" class="form-1">
+            <input type="text" name="search" class="form-control" placeholder="Nhập đơn hàng cần tìm...">
+            <button type="submit" class="btn btn-primary bnt-form-1"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+
+       
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>ID Đơn Hàng</th>
+                  <th>Họ và Tên</th>
+                  <th>Số Điện Thoại</th>
+                  <th>Địa Chỉ</th>
+                  <th>Trạng Thái</th>
+                  <th>Thao Tác</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>1</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>01234567890123456789</td>
+                    <td>Cần Thơ</td>
+                    <td>
+                      <form action="#" style="display:inline;">
+                        <select name="status" onchange="this.form.submit()">
+                          <option value="Đang xử lý" >Đang xử lý</option>
+                          <option value="Chuẩn bị hàng" >Chuẩn bị hàng</option>
+                          <option value="Đang giao" >Đang giao</option>
+                          <option value="Đã giao" >Đã giao</option>
+                          <option value="Hủy đơn" >Hủy đơn</option>
+                        </select>
+                       
+                      </form>
+                    </td>
+                    <td>
+                      <a href="" class="btn btn-info btn-sm">Xem</a>
+                      <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này không?')">Xóa</a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>2</td>
+                    <td>Nguyễn Văn B</td>
+                    <td>012323456789</td>
+                    <td>Cần Thơ</td>
+                    <td>
+                      <form action="#" style="display:inline;">
+                        <select name="status" onchange="this.form.submit()">
+                          <option value="Đang xử lý" >Đang xử lý</option>
+                          <option value="Chuẩn bị hàng" >Chuẩn bị hàng</option>
+                          <option value="Đang giao" >Đang giao</option>
+                          <option value="Đã giao" >Đã giao</option>
+                          <option value="Hủy đơn" >Hủy đơn</option>
+                        </select>
+                       
+                      </form>
+                    </td>
+                    <td>
+                      <a href="" class="btn btn-info btn-sm">Xem</a>
+                      <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này không?')">Xóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Nguyễn Văn C</td>
+                    <td>0123459</td>
+                    <td>KIÊN GIANG </td>
+                    <td>
+                      <form action="#" style="display:inline;">
+                        <select name="status" onchange="this.form.submit()">
+                          <option value="Đang xử lý" >Đang xử lý</option>
+                          <option value="Chuẩn bị hàng" >Chuẩn bị hàng</option>
+                          <option value="Đang giao" >Đang giao</option>
+                          <option value="Đã giao" >Đã giao</option>
+                          <option value="Hủy đơn" >Hủy đơn</option>
+                        </select>
+                       
+                      </form>
+                    </td>
+                    <td>
+                      <a href="" class="btn btn-info btn-sm">Xem</a>
+                      <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này không?')">Xóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Nguyễn Văn D</td>
+                    <td>123456789</td>
+                    <td>BẠC LIÊU </td>
+                    <td>
+                      <form action="#" style="display:inline;">
+                        <select name="status" onchange="this.form.submit()">
+                          <option value="Đang xử lý" >Đang xử lý</option>
+                          <option value="Chuẩn bị hàng" >Chuẩn bị hàng</option>
+                          <option value="Đang giao" >Đang giao</option>
+                          <option value="Đã giao" >Đã giao</option>
+                          <option value="Hủy đơn" >Hủy đơn</option>
+                        </select>
+                       
+                      </form>
+                    </td>
+                    <td>
+                      <a href="" class="btn btn-info btn-sm">Xem</a>
+                      <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này không?')">Xóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>PHẠM MINH KHÔI</td>
+                    <td>288383822</td>
+                    <td>SÓC TRĂNG</td>
+                    <td>
+                      <form action="#" style="display:inline;">
+                        <select name="status" onchange="this.form.submit()">
+                          <option value="Đang xử lý" >Đang xử lý</option>
+                          <option value="Chuẩn bị hàng" >Chuẩn bị hàng</option>
+                          <option value="Đang giao" >Đang giao</option>
+                          <option value="Đã giao" >Đã giao</option>
+                          <option value="Hủy đơn" >Hủy đơn</option>
+                        </select>
+                       
+                      </form>
+                    </td>
+                    <td>
+                      <a href="" class="btn btn-info btn-sm">Xem</a>
+                      <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này không?')">Xóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>TRƯƠNG VĂN TÊN </td>
+                    <td>01234567</td>
+                    <td>BẾN TRE</td>
+                    <td>
+                      <form action="#" style="display:inline;">
+                        <select name="status" onchange="this.form.submit()">
+                          <option value="Đang xử lý" >Đang xử lý</option>
+                          <option value="Chuẩn bị hàng" >Chuẩn bị hàng</option>
+                          <option value="Đang giao" >Đang giao</option>
+                          <option value="Đã giao" >Đã giao</option>
+                          <option value="Hủy đơn" >Hủy đơn</option>
+                        </select>
+                       
+                      </form>
+                    </td>
+                    <td>
+                      <a href="" class="btn btn-info btn-sm">Xem</a>
+                      <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này không?')">Xóa</a>
+                    </td>
+                  </tr>
+               
+              </tbody>
+            </table>
+         
+        </div>
+
+       
+        <style>
+          i{
+            margin-right: 10px;
+            margin-left: 10px;
+          }
+          table {
+            width: 118% !important;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-family: Arial, sans-serif;
+            margin-left: -155px;
+            background-color: #EDEDED;
+
+          }
+
+          table tr:nth-child(even) {
+            background-color: #f2f2f2;
+            /* Màu xám nhạt */
+          }
+
+          table tr:nth-child(odd) {
+            background-color: #ffffff;
+            /* Màu trắng */
+          }
+
+          .bnt-quay {
+            height: 40px;
+            position: absolute;
+            top: 75px;
+            left: -126px;
+            background-color: #F8F8F8;
+            color: #333;
+            width: 400px;
+            border: none;
+            font-size: 23px;
+ 
+          }
+          .bnt-quay:hover{
+            color: #ffffff;
+            background-color: blue;
+          }
+        </style>
+
+
+
+
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <a href="product(admin).html">
+          <button class="product">
+            <i class="fa-brands fa-product-hunt"></i> SẢN PHẨM 
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <a href="order(admin).html">
+          <button class="news">
+            <i class="fa-regular fa-calendar-plus"></i> ĐƠN HÀNG
+          </button>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <a href="user(admin).html"><button class="order-1">
+            <i class="fa-solid fa-cart-shopping"></i> NGƯỜI DÙNG 
+          </button>
+        </a>
+      </div>
+    </div>
+   
+    <div class="row">
+      
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="header">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

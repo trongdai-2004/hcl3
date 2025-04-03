@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="acset/css/carousel.css">
+</head>
+
+<body>
+    <div class="container">
+        <input type="radio" name="slider" id="item-1" checked>
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+        <div class="cards">
+            <label class="card" for="item-1" id="song-1">
+                <img src="acset/image/slides1.jpg" alt="song">
+            </label>
+            <label class="card" for="item-2" id="song-2">
+                <img src="acset/image/slides2.jpg" alt="song">
+            </label>
+            <label class="card" for="item-3" id="song-3">
+                <img src="acset/image/slides3.jpg" alt="song">
+            </label>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentIndex = 1;
+        const totalItems = 3;
+        const intervalTime = 2000;
+
+        setInterval(() => {
+            document.getElementById(`item-${currentIndex}`).checked = true;
+            currentIndex = currentIndex % totalItems + 1;
+        }, intervalTime);
+    });
+
+    console.log('hello');
+
+</script>
+
+
+</html>

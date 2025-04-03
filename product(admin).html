@@ -1,0 +1,612 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="acset/css/test.css">
+  <title>quản lý sản phẩm </title>
+</head>
+
+<body>
+
+  <div class="section-one">
+    <div class="row">
+      <div class="col-4">
+        <div class="logo">
+          <img src="acset/image/logo.jpg" alt="">
+          <div class="title_logo"> <h4> SNACKS(YDK)</h4></div>
+          <style>
+            .title_logo {
+                background: radial-gradient(circle, yellow, orange, red);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        </style>
+        </div>
+        <div class="mauxanh">
+         
+        </div>
+        <div class="home">
+
+          <a href="index(admin).html"> <button class="title">
+              <i class="fa-solid fa-house"></i>
+               TRANG CHỦ 
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="col-8">
+      <div class="title-big">
+            QUẢN LÝ SẢN PHẨM 
+        </div>
+      <style>
+        .title{
+          font-size: 25px;
+          color: black !important;
+        }
+        i{
+          margin-right: 10px;
+        }
+      
+       
+         .title-big{
+            font-size: 45px;
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #2A3F54;
+        }
+        
+    /* Định dạng chung */
+    h1 {
+        font-size: 30px;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Định dạng bảng */
+    table {
+        width: 100%;
+        max-width: 1100px;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin: 20px 0;
+        font-size: 16px;
+    }
+
+    /* Định dạng tiêu đề bảng */
+    th {
+        background-color: #4CAF50;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px 25px;
+        text-align: center;
+    }
+
+    /* Định dạng ô dữ liệu */
+    td {
+        padding: 15px 25px;
+        text-align: center;
+        color: #555;
+        border-bottom: 1px solid #eee;
+        transition: background-color 0.3s ease;
+    }
+
+    td:hover {
+        background-color: #f8f8f8;
+    }
+
+    /* Định dạng hình ảnh sản phẩm */
+    img {
+        border-radius: 10px;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Định dạng liên kết */
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: #0056b3;
+    }
+
+    /* Định dạng các nút */
+    .actions a {
+        display: inline-block;
+        margin: 0 8px;
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .actions a:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+    }
+
+    /* Nút xóa có màu đỏ */
+    .actions .delete {
+        background-color: #e74c3c;
+    }
+
+    .actions .delete:hover {
+        background-color: #c0392b;
+    }
+
+    /* Tạo khoảng cách giữa các bảng */
+    table+table {
+        margin-top: 50px;
+    }
+
+    /* Mở rộng bảng trên các màn hình nhỏ */
+    @media (max-width: 768px) {
+        table {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        td,
+        th {
+            padding: 10px;
+        }
+    }
+
+    .member-1{
+      background-color: #4CAF50;
+      border: none;
+      font-size: 20px;
+      left: 351px;
+      position: fixed;
+      top: 76px;
+      height: 100%;
+      color: #ffffff;
+    
+
+    }
+    .member-1:hover{
+      background-color: blue;
+    }
+
+
+
+</style>
+</head>
+
+<body>
+
+<a href="#">
+    <button class="member-1">
+        <i class="fa-solid fa-plus"></i> THÊM SẢN PHẨM 
+    </button>
+</a>
+
+
+<form method="GET" action="search(productAdmin).php" class="form-1">
+    <input type="text" name="keyword" class="form-control" placeholder="Nhập tên sản phẩm cần tìm...">
+    <button type="submit" class="btn btn-primary bnt-form-1"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+
+    
+    <style>
+      .bnt-form-1{
+        width: 80px;
+        height: auto;
+        margin-left: 3px;
+
+      }
+      .form-1{
+        position: relative;
+        top: -10px;
+        left: 640px;
+        width: 320px;
+        display: flex;
+        border-radius: 10px;
+        
+      }
+        .member-1{
+           height: 35px;
+            position: absolute;
+            top: 102px;
+            left: -126px;
+            background-color: #F8F8F8;
+            color: #333;
+            width: 400px;
+        }
+        .member-1:hover{
+            color: #ffffff;
+
+        }
+    </style>
+
+
+
+
+    
+    <h1 class="table-title">Danh sách sản phẩm</h1>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá cũ</th>
+                    <th>Giá sau khuyến mãi</th>
+                    <th>Khuyến mãi</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="acset/image/banhngot1.jpg" alt="Image" class="product-image"></td>
+                    <td class="product-name">BÁNH NGỌT</td>
+                    <td class="price-before">20.000 VND</td>
+                    <td class="price-after">15.000 VND </td>
+                    <td class="promotion">10%</td>
+                    <td class="action">
+                        <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Chỉnh sửa</a>
+                        <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');"><i class="fa fa-trash"></i> Xóa</a>
+                        <a href="#" class="btn btn-info btn-sm"><i class="fa fa-info-circle"></i> Chi tiết</a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                  <td><img src="acset/image/banhtrangcuon.jpg" alt="Image" class="product-image"></td>
+                  <td class="product-name">BÁNH TRÁNG CUỐN </td>
+                  <td class="price-before">30.000 VND</td>
+                  <td class="price-after">25.000 VND </td>
+                  <td class="promotion">15%</td>
+                  <td class="action">
+                      <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Chỉnh sửa</a>
+                      <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');"><i class="fa fa-trash"></i> Xóa</a>
+                      <a href="#" class="btn btn-info btn-sm"><i class="fa fa-info-circle"></i> Chi tiết</a>
+                  </td>
+              </tr>
+
+              <tr>
+                <td><img src="acset/image/banhtrangnuong.jpg" alt="Image" class="product-image"></td>
+                <td class="product-name">BÁNH TRÁNG NƯỚNG </td>
+                <td class="price-before">15.000 VND</td>
+                <td class="price-after">9.000 VND </td>
+                <td class="promotion">19%</td>
+                <td class="action">
+                    <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Chỉnh sửa</a>
+                    <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');"><i class="fa fa-trash"></i> Xóa</a>
+                    <a href="#" class="btn btn-info btn-sm"><i class="fa fa-info-circle"></i> Chi tiết</a>
+                </td>
+            </tr>
+
+            <tr>
+              <td><img src="acset/image/banhchuoichien.jpg" alt="Image" class="product-image"></td>
+              <td class="product-name">CHUỐI CHIÊN </td>
+              <td class="price-before">10.000 VND</td>
+              <td class="price-after">8.000 VND </td>
+              <td class="promotion">20%</td>
+              <td class="action">
+                  <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Chỉnh sửa</a>
+                  <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');"><i class="fa fa-trash"></i> Xóa</a>
+                  <a href="#" class="btn btn-info btn-sm"><i class="fa fa-info-circle"></i> Chi tiết</a>
+              </td>
+
+              <tr>
+                <td><img src="acset/image/cavienchien.jpg" alt="Image" class="product-image"></td>
+                <td class="product-name">CÁ VIÊN CHIÊN</td>
+                <td class="price-before">30.000 VND</td>
+                <td class="price-after">15.000 VND </td>
+                <td class="promotion">50%</td>
+                <td class="action">
+                    <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Chỉnh sửa</a>
+                    <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');"><i class="fa fa-trash"></i> Xóa</a>
+                    <a href="#" class="btn btn-info btn-sm"><i class="fa fa-info-circle"></i> Chi tiết</a>
+                </td>
+            </tr>
+            <tr>
+              <td><img src="acset/image/douong3.png" alt="Image" class="product-image"></td>
+              <td class="product-name">TRÀ DÂU</td>
+              <td class="price-before">30.000 VND</td>
+              <td class="price-after">25.000 VND </td>
+              <td class="promotion">25%</td>
+              <td class="action">
+                  <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Chỉnh sửa</a>
+                  <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');"><i class="fa fa-trash"></i> Xóa</a>
+                  <a href="#" class="btn btn-info btn-sm"><i class="fa fa-info-circle"></i> Chi tiết</a>
+              </td>
+          </tr>
+          </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <style>
+        /* Tiêu đề bảng */
+        .table-title {
+            text-align: center;
+            color: #2A3F54;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    
+        /* Bảng */
+        .table {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+    
+        /* Header bảng */
+        .table thead {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+        }
+    
+        .table th, .table td {
+            padding: 12px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        /* Hàng có hiệu ứng hover */
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+            transition: 0.3s;
+        }
+    
+        /* Ảnh sản phẩm */
+        .product-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+    
+        .product-image:hover {
+            transform: scale(1.1);
+        }
+    
+        /* Nút hành động */
+        .action .btn {
+            margin: 2px;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .action .btn i {
+            margin-right: 5px;
+        }
+    </style>
+    
+
+
+
+<style>
+ 
+          .btn-an{
+            width: 80px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50% !important;
+            background-color: #ffc107 !important;
+            height: 50px;
+
+
+            
+          }
+          .btn-an-dele{
+            width: 80px;
+            margin-top: 10px!important ;
+            text-align: center;
+            display: flex;
+            justify-content: center!important;
+            align-items: center!important;
+            border-radius: 50% !important;
+            background-color: red !important;
+            height: 50px;
+            padding-top: 15px!important;
+            
+          }
+          .btn-an-detail{
+            width: 80px;
+            margin-top: 10px!important ;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50% !important;
+            background-color: blueviolet !important;
+            height: 50px;
+            padding-top: 15px!important;
+            
+          }
+        
+</style>
+
+
+ <style>
+
+
+  /* Bảng chung */
+table {
+    width: 115%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    margin-left: -140px;
+    background-color: #EDEDED;
+  
+} 
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Màu xám nhạt */
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff; /* Màu trắng */
+}
+
+
+th, td {
+    width: 5%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center; 
+    vertical-align: middle; 
+}
+
+
+th {
+    color: black;
+    font-weight: bold;
+    background-color: #EDEDED;
+    
+}
+
+
+ .product-image {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+.actions a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 5px;
+} 
+
+
+
+
+</style>
+
+
+   
+
+
+
+      </div>
+     
+      
+
+
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <a href="product(admin).html">
+          <button class="product">
+            <i class="fa-brands fa-product-hunt"></i> SẢN PHẨM 
+          </button>
+          <style>
+            .product{
+              font-size: 25px;
+            }
+
+          </style>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+          <a href="order(admin).html">
+            <button class="news">
+              <i class="fa-regular fa-calendar-plus"></i> ĐƠN HÀNG 
+            </button>
+          </a>
+        </div>
+      </div>
+      
+      <style>
+        .news {
+          font-size: 25px;
+          color: #5A9AE1 !important;
+        }
+      </style>
+      
+
+    <div class="row">
+      <div class="col-4">
+        <a href="user(admin).html"><button class="order-1">
+            <i class="fa-solid fa-cart-shopping"></i> NGƯỜI DÙNG 
+          </button>
+          <style>
+            .order-1{
+              font-size: 25px;
+              color: #5A9AE1 !important;
+            }
+          </style>
+        </a>
+      </div>
+    </div>
+   
+    
+    <div class="row">
+      <div class="col-4">
+        
+        <div class="header">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
